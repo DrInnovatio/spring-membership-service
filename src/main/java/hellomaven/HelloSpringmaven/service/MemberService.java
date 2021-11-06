@@ -9,7 +9,11 @@ import java.util.Optional;
 
 public class MemberService {
 
-    private final MemberRepository memberRepository = new MemoryMemberRepository();
+    private final MemberRepository memberRepository;
+
+    public MemberService(MemberRepository memberRepository) {
+        this.memberRepository = memberRepository;
+    }
 
     // Joining the membership.
     public Long join(Member member){
@@ -22,7 +26,7 @@ public class MemberService {
     private void validateDuplicatedMember(Member member) {
         memberRepository.findByName(member.getName())
                 .ifPresent(m -> {
-                    throw new IllegalStateException("The name has existed already ");
+                    throw new IllegalStateException("The name has existed already.");
                 });
     }
 
