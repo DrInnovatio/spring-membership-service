@@ -13,6 +13,7 @@ public class MemberService {
 
     private final MemberRepository memberRepository;
 
+    @Autowired
     public MemberService(MemberRepository memberRepository) {
         this.memberRepository = memberRepository;
     }
@@ -31,6 +32,7 @@ public class MemberService {
                     throw new IllegalStateException("The name has existed already.");
                 });
     }
+// 15강 부터
 
     /**
      * Inquiring all the members
@@ -46,7 +48,4 @@ public class MemberService {
 
     // the second commit test
     //
-
-
-
 }
