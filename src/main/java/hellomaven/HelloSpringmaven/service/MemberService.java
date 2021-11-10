@@ -32,7 +32,7 @@ public class MemberService {
                     throw new IllegalStateException("The name has existed already.");
                 });
     }
-// 15강 부터
+// 16강 부터
 
     /**
      * Inquiring all the members
